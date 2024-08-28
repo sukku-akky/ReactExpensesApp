@@ -4,9 +4,10 @@ import React from "react";
 const months=['january','febrauary','march','april','may','june','july','august','september','october','november','december'];
 
 const ExpenseDate=(props)=>{
-    const month=months[props.date.getMonth()];
-    const year=props.date.getFullYear();
-    const day=props.date.getDate();
+    const date=new Date(props.date);
+    const month=months[date.getMonth()];
+    const year=date.getFullYear();
+    const day=date.getDate();
 
     return (
         <div className='expense-date'>
